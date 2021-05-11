@@ -1,0 +1,27 @@
+.main-header {
+  background-color: #5bc0de;
+}
+.header-text {
+  color: rgba(255, 255, 255, 0.568);
+  padding-left: 200px;
+}
+.text {
+  display: flex;
+}
+.text p {
+  padding: 2px 10px;
+}
+.text-home:hover {
+  color: rgba(255, 255, 255, 0.794);
+  cursor: pointer;
+}
+.text-courses{
+color: white;
+}
+.text-courses:hover {
+  cursor: pointer;
+}
+.text-about:hover {
+  color: rgba(255, 255, 255, 0.794);
+  cursor: pointer;
+}

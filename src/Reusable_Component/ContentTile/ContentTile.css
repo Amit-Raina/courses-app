@@ -1,0 +1,20 @@
+.content-detail td{
+    padding:15px;
+}
+
+.content-detail:nth-child(2n) {
+  background-color: rgb(242,242,242)
+}
+.content-detail:nth-child(2n + 1) {
+  background-color: rgb(255,255,255);
+}
+.content-detail:hover{
+    background-color:rgb(235, 235, 235) ;
+}
+.course-title{
+   color: rgb(2,131,223);
+   cursor: pointer;
+}
+.course-title:hover{
+    text-decoration: underline;
+}

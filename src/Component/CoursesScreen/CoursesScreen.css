@@ -1,0 +1,63 @@
+.content-body {
+  padding-left: 13px;
+}
+.title h1 {
+  margin-bottom: 1rem;
+  font-family: inherit;
+  font-weight: 600;
+  line-height: 1.1;
+  color: #292b2c;
+  font-size: 2.5rem;
+}
+.options-bar {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.options-bar-new {
+  padding: 10px 15px;
+  color: white;
+  background-color: rgb(2, 117, 216);
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.options-bar-new:hover {
+  background-color: rgb(1, 90, 168);
+}
+
+.options-bar-edit {
+  padding: 10px 15px;
+  color: white;
+  background-color: rgb(240, 173, 78);
+}
+.options-bar-edit:hover {
+  background-color: rgb(233, 154, 43);
+}
+
+.options-bar-delete {
+  padding: 10px 15px;
+  color: white;
+  background-color: rgb(217, 83, 79);
+  border-bottom-right-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.options-bar-delete:hover {
+  background-color: rgb(218, 65, 60);
+}
+
+.course-details {
+  border: 2px solid #b9bec096;
+  border-radius: 3px;
+  width: 98%;
+}
+.inner-padding{
+    padding:10px
+}
+.table-header {
+  table-layout: fixed;
+  width: 100%;
+  color: "#292b2c";
+}
+.table-header th{
+    text-align: start;
+}
