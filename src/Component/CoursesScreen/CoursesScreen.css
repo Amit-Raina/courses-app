@@ -49,15 +49,20 @@
   border: 2px solid #b9bec096;
   border-radius: 3px;
   width: 98%;
+  margin-left: 10px;
 }
 .inner-padding{
-    padding:10px
+    padding:10px;
 }
-.table-header {
+
+.table-structure{
   table-layout: fixed;
   width: 100%;
-  color: "#292b2c";
 }
 .table-header th{
     text-align: start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 15px;
+    color: #292b2c;
 }
