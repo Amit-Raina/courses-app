@@ -61,32 +61,36 @@ class CoursesScreen extends Component {
                 </tr>
               </thead>
               <tbody>
-                {this.props.CourseDetails.map((data, index) => {
-                  return (
-                    <ContentTile
-                      id={data.id}
-                      key={index}
-                      title={data.title}
-                      length={data.length}
-                      category={data.category}
-                      author={data.author}
-                      checked={this.state.currentlyOn === data.id}
-                      currentSelected={() => {
-                        if (this.state.currentlyOn === data.id) {
-                          this.setState({ currentlyOn: null });
-                          setTimeout(() => {
-                            this.props.getCourseId(this.state.currentlyOn);
-                          }, 500);
-                        } else {
-                          this.setState({ currentlyOn: data.id });
-                          setTimeout(() => {
-                            this.props.getCourseId(this.state.currentlyOn);
-                          }, 500);
-                        }
-                      }}
-                    />
-                  );
-                })}
+                {this.props.CourseDetails.length === 0 ? (
+                  <ContentTile category="No Data"></ContentTile>
+                ) : (
+                  this.props.CourseDetails.map((data, index) => {
+                    return (
+                      <ContentTile
+                        id={data.id}
+                        key={index}
+                        title={data.title}
+                        length={data.length}
+                        category={data.category}
+                        author={data.author}
+                        checked={this.state.currentlyOn === data.id}
+                        currentSelected={() => {
+                          if (this.state.currentlyOn === data.id) {
+                            this.setState({ currentlyOn: null });
+                            setTimeout(() => {
+                              this.props.getCourseId(this.state.currentlyOn);
+                            }, 500);
+                          } else {
+                            this.setState({ currentlyOn: data.id });
+                            setTimeout(() => {
+                              this.props.getCourseId(this.state.currentlyOn);
+                            }, 500);
+                          }
+                        }}
+                      />
+                    );
+                  })
+                )}
               </tbody>
             </table>
           </div>

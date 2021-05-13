@@ -77,7 +77,10 @@ const rootReducer = (state = initialState, action) => {
           updatedCourseDetails[key].id = parseInt(key) + 1;
         }
 
-        return { ...state, CourseDetails: updatedCourseDetails };
+        return {
+          ...state,
+          CourseDetails: updatedCourseDetails,
+        };
       }
     default:
       return state;

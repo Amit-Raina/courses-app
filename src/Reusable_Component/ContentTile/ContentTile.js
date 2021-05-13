@@ -13,6 +13,7 @@ const ContentTile = (props) => {
           {props.title}
         </td>
         <td>{props.length}</td>
+        
         <td>{props.category}</td>
         <td>{props.author}</td>
       </tr>
