@@ -43,6 +43,7 @@
 }
 .options-bar-delete:hover {
   background-color: rgb(218, 65, 60);
+  cursor: pointer;
 }
 
 .course-details {
