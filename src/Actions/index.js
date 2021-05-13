@@ -1,4 +1,9 @@
-import { ADDNEWCOURSE, SELECTEDID, EDITCOURSE } from "../Constants";
+import {
+  ADDNEWCOURSE,
+  SELECTEDID,
+  EDITCOURSE,
+  DELETECOURSE,
+} from "../Constants";
 
 export const addCourse = (courseData) => {
   return {
@@ -18,5 +23,11 @@ export const editCourse = (courseData, id) => {
     type: EDITCOURSE,
     payload: courseData,
     id: id,
+  };
+};
+
+export const deleteCourse = () => {
+  return {
+    type: DELETECOURSE,
   };
 };

@@ -1,4 +1,9 @@
-import { ADDNEWCOURSE, EDITCOURSE, SELECTEDID } from "../Constants";
+import {
+  ADDNEWCOURSE,
+  DELETECOURSE,
+  EDITCOURSE,
+  SELECTEDID,
+} from "../Constants";
 
 const initialState = {
   CourseDetails: [
@@ -61,6 +66,19 @@ const rootReducer = (state = initialState, action) => {
         CourseDetails: newCourseDetails,
         selectedToUpdate: null,
       };
+    case DELETECOURSE:
+      if (state.selectedToUpdate === null) return;
+      else {
+        const updatedCourseDetails = state.CourseDetails.filter((data) => {
+          return data.id !== state.selectedToUpdate;
+        });
+
+        for (let key in updatedCourseDetails) {
+          updatedCourseDetails[key].id = parseInt(key) + 1;
+        }
+
+        return { ...state, CourseDetails: updatedCourseDetails };
+      }
     default:
       return state;
   }

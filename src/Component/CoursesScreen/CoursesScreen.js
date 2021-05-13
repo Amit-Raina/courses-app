@@ -4,7 +4,7 @@ import Header from "../../Reusable_Component/Header/Header";
 import ContentTile from "../../Reusable_Component/ContentTile/ContentTile";
 import { connect } from "react-redux";
 import { NavLink } from "react-router-dom";
-import { getCourseId } from "../../Actions";
+import { deleteCourse, getCourseId } from "../../Actions";
 
 class CoursesScreen extends Component {
   state = {
@@ -35,7 +35,10 @@ class CoursesScreen extends Component {
               </div>
             </NavLink>
             &nbsp;&nbsp;
-            <div className="options-bar-delete">
+            <div
+              className="options-bar-delete"
+              onClick={this.props.deleteCourse}
+            >
               <i className="fa fa-trash-o" aria-hidden="true"></i> Delete
             </div>
           </div>
@@ -62,7 +65,7 @@ class CoursesScreen extends Component {
                   return (
                     <ContentTile
                       id={data.id}
-                      key={data.id}
+                      key={index}
                       title={data.title}
                       length={data.length}
                       category={data.category}
@@ -102,6 +105,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getCourseId: (courseId) => {
       dispatch(getCourseId(courseId));
+    },
+    deleteCourse: () => {
+      dispatch(deleteCourse());
     },
   };
 };
