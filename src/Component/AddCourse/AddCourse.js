@@ -167,7 +167,7 @@ class AddCourse extends Component {
               Clear Values
             </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <span className="button-cancel">Cancel</span>
+            <span className="button-cancel" onClick={()=>{this.setState({redirect:"/"})}}>Cancel</span>
           </div>
         </div>
       </Fragment>
