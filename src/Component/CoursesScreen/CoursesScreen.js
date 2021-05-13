@@ -26,7 +26,10 @@ class CoursesScreen extends Component {
               </div>
             </NavLink>
             &nbsp;&nbsp;
-            <NavLink to={this.state.currentlyOn === null ? "" :"/edit-course"} style={{ textDecoration: "none" }}>
+            <NavLink
+              to={this.state.currentlyOn === null ? "" : "/edit-course"}
+              style={{ textDecoration: "none" }}
+            >
               <div className="options-bar-edit">
                 <i className="fa fa-pencil" aria-hidden="true"></i> Edit
               </div>
@@ -66,14 +69,16 @@ class CoursesScreen extends Component {
                       author={data.author}
                       checked={this.state.currentlyOn === data.id}
                       currentSelected={() => {
-                        if(this.state.currentlyOn === data.id){
-                        this.setState({currentlyOn:null});
-                        setTimeout(()=>{this.props.getCourseId(this.state.currentlyOn)},500)
-                        
-                        }
-                        else{
-                        this.setState({ currentlyOn: data.id });
-                        setTimeout(()=>{this.props.getCourseId(this.state.currentlyOn)},500)
+                        if (this.state.currentlyOn === data.id) {
+                          this.setState({ currentlyOn: null });
+                          setTimeout(() => {
+                            this.props.getCourseId(this.state.currentlyOn);
+                          }, 500);
+                        } else {
+                          this.setState({ currentlyOn: data.id });
+                          setTimeout(() => {
+                            this.props.getCourseId(this.state.currentlyOn);
+                          }, 500);
                         }
                       }}
                     />

@@ -7,18 +7,17 @@ import "../AddCourse/AddCourse.css";
 
 class EditCourse extends Component {
   state = {
-    title: this.props.CourseDetails[this.props.selectedId - 1 ].title,
-    author: this.props.CourseDetails[this.props.selectedId - 1 ].author,
-    category:this.props.CourseDetails[this.props.selectedId - 1 ].category,
-    length:this.props.CourseDetails[this.props.selectedId - 1 ].length,
-    redirect:"/edit-course"
+    title: this.props.CourseDetails[this.props.selectedId - 1].title,
+    author: this.props.CourseDetails[this.props.selectedId - 1].author,
+    category: this.props.CourseDetails[this.props.selectedId - 1].category,
+    length: this.props.CourseDetails[this.props.selectedId - 1].length,
+    redirect: "/edit-course",
   };
 
   getTitle = (value) => {
     this.setState({
       title: value,
     });
-    
   };
 
   getAuthor = (value) => {
@@ -39,15 +38,15 @@ class EditCourse extends Component {
     });
   };
 
-  clearValues= () =>{
-      this.setState({
-        isEmpty: true,
-        title: "",
-        author: "",
-        category: "",
-        length: "",
-      })
-  }
+  clearValues = () => {
+    this.setState({
+      isEmpty: true,
+      title: "",
+      author: "",
+      category: "",
+      length: "",
+    });
+  };
 
   checkValidity = () => {
     if (this.state.title.length === 0) {
@@ -70,22 +69,24 @@ class EditCourse extends Component {
     return true;
   };
 
-  submitValues = () =>{
+  submitValues = () => {
     if (this.checkValidity()) {
-      this.props.editCourse({
-        id: this.props.selectedId,
-        title: this.state.title,
-        length: this.state.length,
-        category: this.state.category,
-        author: this.state.author,
-      },this.props.selectedId);
+      this.props.editCourse(
+        {
+          id: this.props.selectedId,
+          title: this.state.title,
+          length: this.state.length,
+          category: this.state.category,
+          author: this.state.author,
+        },
+        this.props.selectedId
+      );
 
       this.setState({
-        redirect:"/"
-      })
+        redirect: "/",
+      });
     }
-
-  }
+  };
 
   render() {
     return (
@@ -109,14 +110,13 @@ class EditCourse extends Component {
             <p>Author</p>
             <select
               name="author"
-              
               defaultValue={this.state.author}
               onChange={(event) => {
                 this.getAuthor(event.target.value);
               }}
             >
               <option value=""></option>
-              <option value="cory-house" >Cory House</option>
+              <option value="cory-house">Cory House</option>
               <option value="scott-allen">Scott Allen</option>
               <option value="dan-wahlin">Dan Wahlin</option>
             </select>
@@ -144,11 +144,18 @@ class EditCourse extends Component {
           <br></br>
           <div className="buttons">
             <span className="button-submit" onClick={this.submitValues}>
-            <Redirect to={this.state.redirect}></Redirect>
+              <Redirect to={this.state.redirect}></Redirect>
               <i className="fa fa-paper-plane-o" aria-hidden="true"></i> Submit
             </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <span className="button-cancel" onClick={()=>{this.setState({redirect:"/"})}}>Cancel</span>
+            <span
+              className="button-cancel"
+              onClick={() => {
+                this.setState({ redirect: "/" });
+              }}
+            >
+              Cancel
+            </span>
           </div>
         </div>
       </Fragment>
@@ -159,16 +166,16 @@ class EditCourse extends Component {
 const mapStateToProps = (state) => {
   return {
     CourseDetails: state.CourseDetails,
-    selectedId : state.selectedToUpdate
+    selectedId: state.selectedToUpdate,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    editCourse: (courseData,id) => {
-      dispatch(editCourse(courseData,id));
+    editCourse: (courseData, id) => {
+      dispatch(editCourse(courseData, id));
     },
   };
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(EditCourse);
+export default connect(mapStateToProps, mapDispatchToProps)(EditCourse);

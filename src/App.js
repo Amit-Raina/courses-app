@@ -9,13 +9,11 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-
         <Switch>
-        <Route path="/add-course" exact component={AddCourse}/>
-        <Route path="/edit-course" exact component={EditCourse}/>
-        <Route path="/" exact component={CoursesScreen}/>
+          <Route path="/add-course" component={AddCourse} />
+          <Route path="/edit-course" component={EditCourse} />
+          <Route path="/" component={CoursesScreen} />
         </Switch>
-
       </Fragment>
     );
   }

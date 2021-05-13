@@ -12,7 +12,7 @@ class AddCourse extends Component {
     author: "",
     category: "",
     length: "",
-    redirect:"/add-course"
+    redirect: "/add-course",
   };
 
   getTitle = (value) => {
@@ -83,10 +83,9 @@ class AddCourse extends Component {
         category: this.state.category,
         author: this.state.author,
       });
-        this.setState({
-          redirect:"/"
-        })
-    
+      this.setState({
+        redirect: "/",
+      });
     }
   };
 
@@ -120,7 +119,7 @@ class AddCourse extends Component {
               }}
             >
               <option value=""></option>
-              <option value="cory-house" >Cory House</option>
+              <option value="cory-house">Cory House</option>
               <option value="scott-allen">Scott Allen</option>
               <option value="dan-wahlin">Dan Wahlin</option>
             </select>
@@ -167,7 +166,14 @@ class AddCourse extends Component {
               Clear Values
             </span>
             &nbsp;&nbsp;&nbsp;&nbsp;
-            <span className="button-cancel" onClick={()=>{this.setState({redirect:"/"})}}>Cancel</span>
+            <span
+              className="button-cancel"
+              onClick={() => {
+                this.setState({ redirect: "/" });
+              }}
+            >
+              Cancel
+            </span>
           </div>
         </div>
       </Fragment>

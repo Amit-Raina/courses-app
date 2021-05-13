@@ -9,7 +9,10 @@ const Header = () => {
         <div className="header-text">
           <div className="text">
             <p className="text-home">Home</p>
-            <NavLink to="/" style={{textDecoration:"none"}}> <p className="text-courses">Courses</p> </NavLink>
+            <NavLink to="/" style={{ textDecoration: "none" }}>
+              {" "}
+              <p className="text-courses">Courses</p>{" "}
+            </NavLink>
             <p className="text-about">About</p>
           </div>
         </div>

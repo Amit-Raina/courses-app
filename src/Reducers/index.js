@@ -47,7 +47,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         CourseDetails: [...state.CourseDetails, action.payload],
-        selectedToUpdate:null
+        selectedToUpdate: null,
       };
     case SELECTEDID:
       return { ...state, selectedToUpdate: action.payload };
@@ -56,7 +56,11 @@ const rootReducer = (state = initialState, action) => {
         if (data.id === action.id) return action.payload;
         return data;
       });
-      return { ...state, CourseDetails: newCourseDetails , selectedToUpdate:null};
+      return {
+        ...state,
+        CourseDetails: newCourseDetails,
+        selectedToUpdate: null,
+      };
     default:
       return state;
   }
